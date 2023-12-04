@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PagoController;
 use App\Http\Controllers\SubscripcionController;
+use App\Http\Controllers\Traductor;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,3 +44,7 @@ Route::get('/subscripcion', [SubscripcionController::class, 'index'])
     ->middleware('auth')
     ->name('subscripcion');
 
+Route::get('/traductor', [Traductor::class, 'index'])
+    ->middleware('auth')
+    //->middleware(Subscripcion::class)
+    ->name('traductor.index');
