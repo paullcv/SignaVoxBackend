@@ -1,34 +1,45 @@
 @extends('layouts.windmill')
 @section('contenido')
-    <div class="bg-white rounded p-4 mb-6 mt-2 text-center">
-        <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-200">
-            Traducir
-        </h2>
+<div class="bg-white rounded p-4 mb-6 mt-2 text-center relative">
+    <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-200">
+        Traducir
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="relative">
+            <video id="webcam" width="640" height="480" autoplay style="position: absolute; top: 0; left: 0;"></video>
+            <canvas id="canvas" width="640" height="480" style="position: absolute; top: 0; left: 0;"></canvas>
+        </div>
+
+        <div>
+            <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-2">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="15" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"></textarea>
+        </div>
     </div>
+</div>
 
 
-    <video id="webcam" width="640" height="480" autoplay></video>
-    <canvas id="canvas" width="640" height="480"></canvas>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/react-webcam"></script>
     
     <script>
+         var textarea = document.getElementById('mensaje');
         const labelMap = {
             1: {
-                name: 'Hello',
+                name: 'Hola',
                 color: 'red'
             },
             2: {
-                name: 'Thank You',
+                name: 'Gracias',
                 color: 'yellow'
             },
             3: {
-                name: 'I Love You',
+                name: 'Te Amo',
                 color: 'lime'
             },
             4: {
-                name: 'Yes',
+                name: 'Si',
                 color: 'blue'
             },
             5: {
@@ -53,6 +64,7 @@
 
 
                    console.log(labelMap[text]['name'] , scores[i]);
+                   textarea.value += ' ' + labelMap[text]['name'];
                    
                     // DRAW!!co
                     ctx.beginPath()

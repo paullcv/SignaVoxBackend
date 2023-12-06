@@ -1,6 +1,6 @@
     <!-- Theme toggler -->
     <li class="flex">
-        <button class="rounded-md focus:outline-none focus:shadow-outline-purple"
+        <button class="rounded-md focus:outline-none focus:shadow-outline-purple" title="Traducir Gestos"
             @click="toggleTheme" aria-label="Toggle color mode">
             <template x-if="!dark">
                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">

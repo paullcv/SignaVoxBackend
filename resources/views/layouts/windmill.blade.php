@@ -72,6 +72,8 @@
 
                     <ul class="flex items-center flex-shrink-0 space-x-6">
 
+                        @include('layouts.traducirpython')
+
                         @include('layouts.tema')
 
                         @include('layouts.notificaciones')
