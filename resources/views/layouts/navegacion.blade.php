@@ -60,10 +60,10 @@
                 </li>
 
 
-                {{-- @if (auth()->user()->subscribedToPrice('price_1O8rF5Dh3Rgs6haXBpBaq63L', 'Fotovent'))
+                @if (auth()->user()->subscribed('SignaVox'))
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold text-white transition-colors duration-150 hover:text-blue-300 dark:hover:text-blue-200"
-                            href="{{ route('catalogo.index') }}">
+                           href="{{ route('traductor.index')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" fill="white">
                                 <path
                                     d="M149.1 64.8L138.7 96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H373.3L362.9 64.8C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z" />
@@ -80,7 +80,7 @@
                 @else
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold text-white transition-colors duration-150 hover:text-blue-300 dark:hover:text-blue-200"
-                            href="{{ route('catalogo.index') }}">
+                           href="{{ route('traductor.index')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"
                                 fill="white">
                                 <path
@@ -94,26 +94,40 @@
                             <i class="fas fa-lock ml-2"></i>
                         </a>
                     </li>
-                @endif --}}
+                @endif
 
+
+
+                @if (auth()->user()->subscribed('SignaVox'))
                 <li class="relative px-6 py-3">
-                    <a class="inline-flex items-center w-full text-sm font-semibold text-white transition-colors duration-150 hover:text-blue-300 dark:hover:text-blue-200"
-                        {{-- href="#"> --}}
-                        href="{{ route('traductor.index')}}">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" fill="white">
-                            <path
-                                d="M149.1 64.8L138.7 96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H373.3L362.9 64.8C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z" />
+                    <a class="inline-flex items-center w-full text-sm font-semibold text-white transition-colors duration-150 hover:text-blue-300 dark:hover:text-blue-200" href="{{ asset('descarga/app-signavox.rar') }}" download="app-signavox.rar">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+                            <!-- Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com
+                            License - https://fontawesome.com/license/free
+                            Copyright 2023 Fonticons, Inc.-->
+                            <path fill="white" d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/>
                         </svg>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 17v1a1 1 0 001 1h4a1 1 0 001-1v-1"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M21 15s-2-4-6-4H9c-4 0-6 4-6 4"></path>
-                        <path d="M3 21h18a2 2 0 002-2v-1H1v1a2 2 0 002 2z"></path>
-                        </svg>
-                        <span class="ml-4">Traducir</span>
+                        <span class="ml-4">Descargar App</span>
                     </a>
                 </li>
-
+                @else
+                <li class="relative px-6 py-3">
+                    <a class="inline-flex items-center w-full text-sm font-semibold text-white transition-colors duration-150 hover:text-blue-300 dark:hover:text-blue-200" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+                            <!-- Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com
+                            License - https://fontawesome.com/license/free
+                            Copyright 2023 Fonticons, Inc.-->
+                            <path fill="white" d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/>
+                        </svg>
+                        <span class="ml-4">Descargar App</span>
+                          <!-- Ícono de candado -->
+                          <i class="fas fa-lock ml-2"></i>
+                    </a>
+                </li>
+                
+                @endif
+                
+                
             </ul>
         </ul>
     </div>

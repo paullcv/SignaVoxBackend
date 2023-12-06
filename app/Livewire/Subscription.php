@@ -26,11 +26,11 @@ class Subscription extends Component
 
         //capturar error
         try {
-            if (auth()->user()->subscribed('Fotovent')) {
-                auth()->user()->subscription('Fotovent')->swap($plan);
+            if (auth()->user()->subscribed('SignaVox')) {
+                auth()->user()->subscription('SignaVox')->swap($plan);
                 return;
             }
-            auth()->user()->newSubscription('Fotovent', $plan)->create($this->defaultPaymentMethod->id);
+            auth()->user()->newSubscription('SignaVox', $plan)->create($this->defaultPaymentMethod->id);
             auth()->user()->refresh();
         } catch (\Exception $e) {
             session()->flash('error', 'El intento de pago fallo debido a un metodo de pago no valido');
@@ -40,13 +40,13 @@ class Subscription extends Component
     //canelar subscripcion
     public function cancelSubscription()
     {
-        auth()->user()->subscription('Fotovent')->cancel();
+        auth()->user()->subscription('SignaVox')->cancel();
     }
 
     //reanudar subscription
     public function resumeSubscription()
     {
-        auth()->user()->subscription('Fotovent')->resume();
+        auth()->user()->subscription('SignaVox')->resume();
     }
 
 

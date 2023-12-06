@@ -4,6 +4,7 @@ use App\Http\Controllers\IA_DeteccionController;
 use App\Http\Controllers\PagoController;
 use App\Http\Controllers\SubscripcionController;
 use App\Http\Controllers\Traductor;
+use App\Http\Middleware\Subscripcion;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,7 +48,7 @@ Route::get('/subscripcion', [SubscripcionController::class, 'index'])
 
 Route::get('/traductor', [Traductor::class, 'index'])
     ->middleware('auth')
-    //->middleware(Subscripcion::class)
+    ->middleware(Subscripcion::class)
     ->name('traductor.index');
 
     Route::get('detectargesto', [IA_DeteccionController::class, 'detectargesto'])->middleware('auth')->name('detectargesto');
