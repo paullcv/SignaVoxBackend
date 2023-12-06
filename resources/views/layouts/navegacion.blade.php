@@ -74,7 +74,7 @@
                                 d="M21 15s-2-4-6-4H9c-4 0-6 4-6 4"></path>
                             <path d="M3 21h18a2 2 0 002-2v-1H1v1a2 2 0 002 2z"></path>
                             </svg>
-                            <span class="ml-4">Crear Catalogo</span>
+                            <span class="ml-4">Traductor</span>
                         </a>
                     </li>
                 @else
@@ -89,7 +89,7 @@
                             <path
                                 d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
                             </path>
-                            <span class="ml-4">Crear Catalogo</span>
+                            <span class="ml-4">Traductor</span>
                             <!-- Ícono de candado -->
                             <i class="fas fa-lock ml-2"></i>
                         </a>
